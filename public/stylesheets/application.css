@@ -1,13 +1,19 @@
 @import "whitespace-reset.css";
 
 body {
-  background-color: #d0f0f0;
+  background-color: #ffffff;
   box-sizing: border-box;
   font: 16px Helvetica, Arial, sans-serif;
 }
 
 header, main {
   margin: 2rem auto;
+}
+
+header {
+  background-color: #9b9b9b87;
+  padding: 2rem;
+  margin-top: 0;
 }
 
 h1, h2 {
@@ -23,7 +29,8 @@ h2 {
 }
 
 table {
-  background-color: #f0f0c0;
+  background-color: #e6e6e6;
+  border-radius: 8px;
   border-collapse: collapse;
   margin: 2.5rem auto;
   text-align: left;
@@ -39,7 +46,7 @@ thead, tbody, tr, th, td {
 }
 
 td a {
-  background-color: #f0c0c0;
+  background-color: #50db62;
   border: 1px solid black;
   border-radius: 1rem;
   box-shadow: 4px 2px 5px -1px #808080;
@@ -53,7 +60,7 @@ td a {
 tfoot,
 tfoot tr,
 tfoot td {
-  background-color: #d0f0f0;
+  background-color: #9b9b9b;
   border: none;
 }
 
@@ -68,7 +75,7 @@ tfoot a {
 
 td a:hover,
 td a:active {
-  background-color: #f08080;
+  background-color: #235e2b;
 }
 
 form {
@@ -121,7 +128,7 @@ input[type="submit"]:active,
 input[type="submit"]:hover,
 button.cancel:active,
 button.cancel:hover {
-  background-color: #d13b28;
+  background-color: #155813;
   cursor: pointer;
 }
 
@@ -130,7 +137,10 @@ button.cancel:hover {
   font-weight: bold;
   list-style-position: inside;
   margin: 0 2rem;
+  margin-bottom: 10px;
   max-width: 100%;
+  border-radius: 5px;
+  padding: .5rem;
 }
 
 .flash li {
@@ -151,4 +161,29 @@ button.cancel:hover {
 .info {
   background-color: #cbe5f2;
   color: #3399cc;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeInAnimation .25s forwards;
+}
+
+@keyframes fadeInAnimation {
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-out {
+  opacity: 1;
+  animation: fadeOutAnimation 4s forwards;
+}
+
+@keyframes fadeOutAnimation {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }

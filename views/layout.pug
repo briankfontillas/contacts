@@ -9,10 +9,16 @@ html(lang="en-US")
   body
     header
       h1 My Contacts Manager
+    
+    - let messageTypes = Object.keys(flash || {});
+    if messageTypes.length > 0
+      ul
+        each messageType in messageTypes 
+          each message in flash[messageType] 
+            if messageType === "success"
+              li.flash.fade-in.fade-out(class=messageType)= message
+            else 
+              li.flash.fade-in(class=messageType)= message
 
-    if errorMessages && errorMessages.length > 0
-      ul.flash 
-        each message in errorMessages 
-          li.error= message
     main
       block content
